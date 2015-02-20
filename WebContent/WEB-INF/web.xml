@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Jlinkapp</display-name>
+    <welcome-file-list>
+    <welcome-file>UploadFile.jsp</welcome-file>
+  </welcome-file-list>
+  
+   <display-name>Using J-Link Methods In Servlets And JSP Running Under Tomcat With Java 2 Platform</display-name>
+   <description>Using J-Link Methods In Servlets And JSP Running Under Tomcat With Java 2 Platform</description>
+  
+  
+    <servlet>
+        <servlet-name>Fileuploading</servlet-name>
+        <servlet-class>bean.UploadFile</servlet-class>
+    </servlet>
+ 
+ 	<servlet-mapping>
+        <servlet-name>Fileuploading</servlet-name>
+        <url-pattern>/upload.do</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ChangingDimension</servlet-name>
+        <servlet-class>bean.AsyncInstallTest</servlet-class>
+    </servlet>
+ 
+ 	<servlet-mapping>
+        <servlet-name>ChangingDimension</servlet-name>
+        <url-pattern>/EnterDimensions.do</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>NewValues</servlet-name>
+        <servlet-class>bean.NewValues</servlet-class>
+    </servlet>
+ 
+ 	<servlet-mapping>
+        <servlet-name>NewValues</servlet-name>
+        <url-pattern>/newvalues.do</url-pattern>
+    </servlet-mapping>
+
+    <context-param> 
+    <description>Location to store files from Client</description> 
+    <param-name>fromClient</param-name> 
+    <param-value>
+         D:\Proe_RnD\jlink\jlinkapp\media\fromClient\
+     </param-value> 
+</context-param>
+
+
+    <context-param> 
+    <description>Location to store file to client</description> 
+    <param-name>toClient</param-name> 
+    <param-value>
+         D:\Proe_RnD\jlink\jlinkapp\media\toClient\
+     </param-value> 
+</context-param>
+
+
+<servlet>
+    <servlet-name>fileServlet</servlet-name>
+    <servlet-class>utility.FileServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>fileServlet</servlet-name>
+    <url-pattern>/file/*</url-pattern>
+</servlet-mapping>
+
+    <servlet>
+        <servlet-name>FileSelection</servlet-name>
+        <servlet-class>bean.AsyncInstallTest</servlet-class>
+    </servlet>
+ 
+ 	<servlet-mapping>
+        <servlet-name>FileSelection</servlet-name>
+        <url-pattern>/openfile.do</url-pattern>
+    </servlet-mapping>
+
+</web-app>
